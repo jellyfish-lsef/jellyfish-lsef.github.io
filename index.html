@@ -24,7 +24,6 @@
                 <div id="topBarNavi">
                     <a href="#editor" class="selected">Home</a>
                     <a href="#faq">Help + Support</a>
-                    <a href="#scripts">Script Hub</a>
                     
                 </div>
                 <button id="topBarInject" class="outlinedBtn" onclick="download()">Download</button>
@@ -32,8 +31,8 @@
             <div id="mainContainer">
                 <div id="editorContainer" style="background-image: url('assets/Untitled.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;" class="container">
                     <div id="titles">
-                        <h1>The most powerful UI for Calamari-M</h1>
-                        <h2>Fully fledged code editor, gorgeous interface and best-in-class script hub.</h2>
+                        <h1>The most powerful UI for your injectors.</h1>
+                        <h2>Fully fledged code editor, multiple injectors, gorgeous interface and best-in-class script hub.<br>For Calamari-M, Synapse<sup>BETA</sup> and SirHurt<sup>SOON</sup></h2>
                     </div>
                     <div id="mainImage"></div>
                 </div>
@@ -43,7 +42,7 @@
                     <h1 class="HelpQuestion">Where do I put the scripts?</h1>
                     In the "Jellyfish" folder in your documents folder. Make sure the file names in ".lua"!
                     <h1 class="HelpQuestion">Will Jellyfish come to Windows?</h1>
-                    I'd love to bring Jellyfish to more users, however due to Calamari for Windows not having a public API, this isn't possible right now. <strike>go bug marie</strike> <sup>(don't actually, she's probably busy)</sup>
+                    Yes. Synapse X version is in beta, and SirHurt is coming next.
                     <h1 class="HelpQuestion">It's not injecting!</h1>
                     Try going to the Tools tab and then toggling Alternative Injection. (if you have Alternative Injection enabled, and don't see a popup window, look in your Dock for a black box with a >_ on it)
                     <h1 class="HelpQuestion">It's crashing my game!</h1>
@@ -76,11 +75,11 @@
         </div>
         <div id="loginContainer">
             <div id="loginBox">
-                <img width="85" height="85" src="assets/calamari.png"/>
-                <h1>Login with Calamari</h1>
-                <input type="text" class="textbox" placeholder="Username"  id="loginUsername"></input>
-                <input type="password" class="textbox" placeholder="Password" id="loginPassword"></input>
-                <button id="loginBtn" class="outlinedBtn" onclick="login()">Login</button><a id="buyBtn" target="_blank" class="outlinedBtn" href="https://calamari.cc/purchase/m/">Register</a>
+                <h1>Select a download</h1>
+                Jellyfish for macOS supports Calamari-M<br>
+                Jellyfish for Windows supports Synapse X.<br><br>
+                <button id="macBtn" class="outlinedBtn" disabled onclick="downloadMac()" style="margin-top: 8px;margin-bottom: 8px;">Download for macOS</button> <br>
+                <button id="winBtn" class="outlinedBtn" disabled onclick="downloadWindows()">Download for Windows</button><br>
             </div>
         </div>
         <script src="client.js"></script>
