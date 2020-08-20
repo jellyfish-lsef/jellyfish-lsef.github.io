@@ -60,7 +60,7 @@ async function download() {
     console.log(latestMac,latestWin)
     if (latestWin) {
         document.querySelector("#winBtn").disabled = undefined
-        document.querySelector("#winBtn").innerText = "Download " + latestWin.r.tagName + " for Windows"
+        document.querySelector("#winBtn").innerText = "Download " + latestWin.r.tag_name + " for Windows"
         document.querySelector("#winBtn").onclick = () => {location.replace(latestWin.asset["browser_download_url"])}
     } else {
         document.querySelector("#winBtn").innerText = "Windows version coming soon"
