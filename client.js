@@ -52,7 +52,7 @@ async function download() {
     if (latestMac) {
         document.querySelector("#macBtn").disabled = undefined
         document.querySelector("#macBtn").innerText = "Download " + latestMac.r.tag_name + " for macOS"
-        document.querySelector("#macBtn").onclick = () => {location.replace(latestMac.asset["browser_download_url"])}
+        document.querySelector("#macBtn").onclick = () => {location.replace("https://link-to.net/158988/" + Math.random() * 1000 + "/dynamic/?r=" + btoa(encodeURI(latestMac.asset["browser_download_url"])))}
     } else {
         document.querySelector("#macBtn").innerText = "macOS version coming soon"
     }
@@ -61,7 +61,7 @@ async function download() {
     if (latestWin) {
         document.querySelector("#winBtn").disabled = undefined
         document.querySelector("#winBtn").innerText = "Download " + latestWin.r.tag_name + " for Windows"
-        document.querySelector("#winBtn").onclick = () => {location.replace(latestWin.asset["browser_download_url"])}
+        document.querySelector("#winBtn").onclick = () => {location.replace("https://link-to.net/158988/" + Math.random() * 1000 + "/dynamic/?r=" + btoa(encodeURI(latestWin.asset["browser_download_url"])))}
     } else {
         document.querySelector("#winBtn").innerText = "Windows version coming soon"
     }
