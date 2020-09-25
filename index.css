@@ -1,21 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
-@font-face {
-    font-family: 'GothamSSm-Black'; 
-    src: url('file:///Applications/Roblox.app/Contents/Resources/content/fonts/GothamSSm-Black.otf');
-}
-@font-face {
-    font-family: 'GothamSSm-Bold'; 
-    src: url('file:///Applications/Roblox.app/Contents/Resources/content/fonts/GothamSSm-Bold.otf');
-}
-@font-face {
-    font-family: 'GothamSSm-Medium'; 
-    src: url('file:///Applications/Roblox.app/Contents/Resources/content/fonts/GothamSSm-Medium.otf');
-}
-@font-face {
-    font-family: 'GothamSSm-Book'; 
-    src: url('file:///Applications/Roblox.app/Contents/Resources/content/fonts/GothamSSm-Book.otf');
-}
-
 
 *, *::after, *::before {
     -webkit-user-select: none;

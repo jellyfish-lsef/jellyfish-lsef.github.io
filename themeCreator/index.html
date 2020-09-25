@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Jellyfish</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="accent.css">
+        <link rel="stylesheet" href="index.css">
+        <script>document.addEventListener('dragover', event => event.preventDefault());document.addEventListener('drop', event => event.preventDefault());</script>
+    </head>
+    <body>
+        <div id="appContainer">
+            <div id="topBar" class="shadow">
+                <h1 class="topBarBrand">Jellyfish</h1>
+                <div id="topBarNavi">
+                    <a href="#" >Tab</a>
+                    <a href="#" class="selected">Selected Tab</a>
+                    <a href="#" >Tab</a>
+                </div>
+                <button id="topBarInject" class="outlinedBtn">Button</button>
+            </div>
+            <div id="mainContainer">
+                <div id="settingsContainer" class="container" style="left:0vw;margin-top: 0px;padding: 8px;overflow: auto;overflow-x: hidden;">
+                    
+                    <div id="preview">
+                        <h2>Preview</h2>
+                        <input id="alternativeElevation" type="checkbox" style="margin-left: 8px;">
+                        <label for="alternativeElevation">Checkbox</label><br><br>
+                        <div id="reinstallCalamari" style="display: none;">
+                            Text
+                            <button class="simpleButton" style="position: initial;width: auto;padding-left: 16px;padding-right: 16px;">Simple button</button>
+                            <div class="slider" id="colourSlider">
+                                <div class="sliderHeader">
+                                    <div class="sliderHeaderText">Slider</div>
+                                    <div class="sliderHeaderReset"><button class="simpleButton" onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 180;">Reset</button></div>
+                                </div>
+                                <input id="hueSlider" type="range" class="fullwidth" max="360" value="180" min="0"/>
+                            </div><br>
+                        </div>
+                        <div class="script" style="display: block;"><h1>Script</h1><h3>!it isn't selected</h3></div>
+                        <div class="script scriptSelected" style="display: block;"><h1>Script Selected</h1><h3>!it's selected</h3></div>
+                        <div class="script" style="display: block;"><h1>Script</h1><h3>!it isn't selected</h3></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+       
+    </body>
+</html>
