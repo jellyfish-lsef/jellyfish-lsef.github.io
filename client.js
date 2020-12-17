@@ -39,6 +39,7 @@ getLatest = ((j,platform) => {
     }
     return false;
 })
+var ddl = false;
 document.querySelector("#loginContainer").onclick = () => { document.body.classList.remove("loggingIn") }
 async function download() {
     /**if (confirm("IMPORTANT: READ CAREFULLY\n\nJellyfish is only to be used on games that you have explicit permission to run a LSI on, such as for example, developing anti-cheat software.\n\nAre you intending to use Jellyfish to attack into games you are not the owner of, and do not have permission from the owner to run a LSI on?\n\nCancel = No\nOK = Yes")) {
@@ -52,7 +53,13 @@ async function download() {
     if (latestMac) {
         document.querySelector("#macBtn").disabled = undefined
         document.querySelector("#macBtn").innerText = "Download " + latestMac.r.tag_name + " for macOS"
-        document.querySelector("#macBtn").onclick = () => {location.replace("https://link-to.net/158988/" + Math.random() * 1000 + "/dynamic/?r=" + btoa(encodeURI(latestMac.asset["browser_download_url"])))}
+        document.querySelector("#macBtn").onclick = () => {
+            if (!ddl) {
+                location.replace("https://link-to.net/158988/" + Math.random() * 1000 + "/dynamic/?r=" + btoa(encodeURI(latestMac.asset["browser_download_url"])))
+            } else {
+                location.replace(latestMac.asset["browser_download_url"])
+            }
+        }
     } else {
         document.querySelector("#macBtn").innerText = "macOS version coming soon"
     }
@@ -61,7 +68,13 @@ async function download() {
     if (latestWin) {
         document.querySelector("#winBtn").disabled = undefined
         document.querySelector("#winBtn").innerText = "Download " + latestWin.r.tag_name + " for Windows"
-        document.querySelector("#winBtn").onclick = () => {location.replace("https://link-to.net/158988/" + Math.random() * 1000 + "/dynamic/?r=" + btoa(encodeURI(latestWin.asset["browser_download_url"])))}
+        document.querySelector("#winBtn").onclick = () => {
+            if (!ddl) {
+                location.replace("https://link-to.net/158988/" + Math.random() * 1000 + "/dynamic/?r=" + btoa(encodeURI(latestWin.asset["browser_download_url"])))
+            } else {
+                location.replace(latestWin.asset["browser_download_url"])
+            }
+        }
     } else {
         document.querySelector("#winBtn").innerText = "Windows version coming soon"
     }
@@ -73,5 +86,9 @@ async function download() {
         injectBtn.innerText = "Download"
         injectBtn.disabled = false
     },2000)**/
+    
+}
+
+function dd() {
     
 }
