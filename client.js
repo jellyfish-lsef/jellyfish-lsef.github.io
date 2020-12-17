@@ -93,5 +93,5 @@ function dd() {
     ddl = true;
     
     download()
-    this.remove()
+    document.querySelector("a[href^=\"javascript:dd\"]").remove()
 }
