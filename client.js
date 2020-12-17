@@ -93,4 +93,5 @@ function dd() {
     ddl = true;
     
     download()
+    this.remove()
 }
