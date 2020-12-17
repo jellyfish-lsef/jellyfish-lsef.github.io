@@ -90,5 +90,7 @@ async function download() {
 }
 
 function dd() {
+    ddl = true;
     
+    download()
 }
