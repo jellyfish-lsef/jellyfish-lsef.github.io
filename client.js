@@ -11,17 +11,12 @@ if (localStorage.getItem("user_is_skid")) {
 
 const mainContainer = document.querySelector("#mainContainer")
 const injectBtn = document.querySelector("#topBarInject")
-const runFab = document.querySelector("#runFab")
-const scriptsContainer = document.querySelector("#scriptsSidebar")
-const searchBox = document.querySelector("#searchBox")
-
 window.onhashchange = function(h) {
     var hash = location.hash
     if (hash == "#editor") { mainContainer.style.left = "0px" }
     if (hash == "#faq") { mainContainer.style.left = "-100vw" }
-    if (hash == "#scripts") { mainContainer.style.left = "-200vw"; }
     while (document.querySelector("a.selected")) {document.querySelector("a.selected").classList.remove("selected")}
-    document.querySelector(`a[href="${hash}"]`).classList.add("selected")
+    try {document.querySelector(`a[href="${hash}"]`).classList.add("selected")}catch(e){}
 }
 
 if (location.hash.length > 1) { window.onhashchange()}
@@ -45,6 +40,7 @@ async function download() {
         localStorage.setItem("user_is_skid",true)
         location.reload()
     }**/
+    location.hash = "editor"
     document.body.classList.add("loggingIn")
     var ftch = await fetch("https://api.github.com/repositories/273986462/releases")
     var j = await ftch.json()
@@ -74,4 +70,9 @@ async function download() {
         injectBtn.disabled = false
     },2000)**/
     
+}
+if (location.hash == "#download") {
+    location.hash = "editor"
+    download()
+
 }
