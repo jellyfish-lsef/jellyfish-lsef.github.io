@@ -47,7 +47,7 @@ async function download() {
     var j = await ftch.json()
     var latestMac = getLatest(j,"darwin")
     if (latestMac) {
-        document.querySelector("#macBtn").disabled = undefined
+        //document.querySelector("#macBtn").disabled = undefined
         document.querySelector("#macBtn").innerText = "Download " + latestMac.r.tag_name + " for macOS"
         document.querySelector("#macBtn").onclick = () => {
             open(latestMac.asset["browser_download_url"])
