@@ -29,6 +29,7 @@ window.onkeydown = function(evt) {
 getLatest = ((j,platform) => {
     for (var r of j) {
         for (var asset of r.assets) {
+            console.log(asset,asset.name);
             if (asset.name.includes(platform)) return {asset,r};
         }
     }
@@ -43,19 +44,17 @@ async function download() {
     }**/
     location.hash = "editor"
     document.body.classList.add("loggingIn")
-    var ftch = await fetch("https://api.github.com/repositories/273986462/releases")
+    var ftch = await fetch("https://api.github.com/repos/jellyfish-lsef/jellyfish-bootstrapper/releases")
     var j = await ftch.json()
-    var latestMac = getLatest(j,"darwin")
+    var latestMac = getLatest(j,"dmg")
     if (latestMac) {
-        //document.querySelector("#macBtn").disabled = undefined
-        document.querySelector("#macBtn").innerText = "Download " + latestMac.r.tag_name + " for macOS"
-        document.querySelector("#macBtn").onclick = () => {
-            open(latestMac.asset["browser_download_url"])
-        }
+        document.querySelector("#macBtn").disabled = undefined
+        document.querySelector("#macBtn").innerText = "Download for macOS"
+        document.querySelector("#macBtn").href = latestMac.asset["browser_download_url"]
     } else {
         document.querySelector("#macBtn").innerText = "macOS version coming soon"
     }
-    var latestWin = getLatest(j,"win32")
+    /*var latestWin = getLatest(j,"win32")
     console.log(latestMac,latestWin)
     if (latestWin) {
         document.querySelector("#winBtn").disabled = undefined
@@ -73,7 +72,7 @@ async function download() {
     setTimeout(function() {
         injectBtn.innerText = "Download"
         injectBtn.disabled = false
-    },2000)**/
+    },2000)*/
     
 }
 if (location.hash == "#download") {
